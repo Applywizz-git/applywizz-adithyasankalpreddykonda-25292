@@ -20,14 +20,23 @@ const Hero: React.FC = () => {
     }
   }, [currentIndex, fullText]);
 
+  // const handleDownloadResume = () => {
+  //   const link = document.createElement('a');
+  //   link.href = portfolioData.personalInfo.resume;
+  //   link.download = portfolioData.personalInfo.resume.split('/').pop() || 'resume.pdf';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
   const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = portfolioData.personalInfo.resume;
-    link.download = portfolioData.personalInfo.resume.split('/').pop() || 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const link = document.createElement('a');
+  link.href = '/resume.pdf';
+  link.download = 'resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   const handleContactClick = () => {
     const contactSection = document.querySelector('#contact');
